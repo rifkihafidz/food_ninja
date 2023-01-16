@@ -1,14 +1,16 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:food_ninja/utils/theme.dart';
 
 class UploadPhotoButton extends StatelessWidget {
   final String imageUrl;
   final String titleButton;
-  const UploadPhotoButton(
-      {Key? key, required this.imageUrl, required this.titleButton})
-      : super(key: key);
+  const UploadPhotoButton({
+    Key? key,
+    required this.imageUrl,
+    required this.titleButton,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +38,7 @@ class UploadPhotoButton extends StatelessWidget {
           SizedBox(height: 10),
           Text(
             titleButton,
-            style: GoogleFonts.viga(
-              fontWeight: FontWeight.w500,
-            ),
+            style: vigaTextFont.copyWith(fontWeight: FontWeight.w500),
           )
         ],
       ),

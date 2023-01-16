@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:food_ninja/utils/theme.dart';
 
 class Brand extends StatelessWidget {
   const Brand({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class Brand extends StatelessWidget {
           ),
           Text(
             'FoodNinja',
-            style: GoogleFonts.viga(
+            style: vigaTextFont.copyWith(
               fontSize: 40,
               color: Color(0xFF53E88B),
               letterSpacing: 0.5,
@@ -27,7 +27,7 @@ class Brand extends StatelessWidget {
           ),
           Text(
             'Delivers Your Favorite Food',
-            style: GoogleFonts.inter(
+            style: interTextFont.copyWith(
               fontSize: 13,
               fontWeight: FontWeight.bold,
               color: Color(0xFF09051C),

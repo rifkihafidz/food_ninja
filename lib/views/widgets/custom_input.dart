@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:food_ninja/utils/theme.dart';
 
 class CustomInput extends StatelessWidget {
   final String hintText;
@@ -10,9 +10,12 @@ class CustomInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      style: GoogleFonts.viga(color: Color(0xFF3B3B3B)),
+      style: vigaTextFont.copyWith(color: Color(0xFF3B3B3B)),
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+        contentPadding: EdgeInsets.symmetric(
+          horizontal: 25,
+          vertical: 20,
+        ),
         filled: true,
         fillColor: Color(0xFFF6F8FD),
         enabledBorder: OutlineInputBorder(
@@ -30,7 +33,7 @@ class CustomInput extends StatelessWidget {
           ),
         ),
         hintText: hintText,
-        hintStyle: GoogleFonts.viga(color: Colors.grey),
+        hintStyle: vigaTextFont.copyWith(color: Colors.grey),
       ),
     );
   }

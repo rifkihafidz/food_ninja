@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:food_ninja/utils/theme.dart';
 import 'package:food_ninja/views/pages/sign_in.dart';
 import 'package:food_ninja/views/widgets/custom_button.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -24,7 +25,7 @@ class OnBoarding extends StatelessWidget {
               SizedBox(height: 15),
               Text(
                 'Food Ninja is Where Your\nComfort Food Lives',
-                style: GoogleFonts.viga(
+                style: vigaTextFont.copyWith(
                   fontSize: 22,
                   fontWeight: FontWeight.w400,
                 ),
@@ -43,7 +44,10 @@ class OnBoarding extends StatelessWidget {
                 title: 'Next',
                 onPressed: () {
                   Navigator.pushNamedAndRemoveUntil(
-                      context, SignIn.routeName, (route) => false);
+                    context,
+                    SignIn.routeName,
+                    (route) => false,
+                  );
                 },
                 height: 57,
                 width: MediaQuery.of(context).size.width / 3,

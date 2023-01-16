@@ -1,26 +1,26 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:food_ninja/utils/theme.dart';
 
 class CustomInputSignUp extends StatelessWidget {
   final String hintText;
   final String iconUrl;
   final bool obscureText;
   final bool suffixIcon;
-  const CustomInputSignUp(
-      {Key? key,
-      required this.hintText,
-      required this.iconUrl,
-      this.obscureText = false,
-      this.suffixIcon = false})
-      : super(key: key);
+  const CustomInputSignUp({
+    Key? key,
+    required this.hintText,
+    required this.iconUrl,
+    this.obscureText = false,
+    this.suffixIcon = false,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       obscureText: obscureText,
-      style: GoogleFonts.viga(color: Color(0xFF3B3B3B)),
+      style: vigaTextFont.copyWith(color: Color(0xFF3B3B3B)),
       decoration: InputDecoration(
         contentPadding: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
         filled: true,
@@ -40,7 +40,7 @@ class CustomInputSignUp extends StatelessWidget {
           ),
         ),
         hintText: hintText,
-        hintStyle: GoogleFonts.viga(color: Colors.grey),
+        hintStyle: vigaTextFont.copyWith(color: Colors.grey),
         prefixIcon: Padding(
           padding: const EdgeInsets.only(
             left: 10,
