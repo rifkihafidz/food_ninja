@@ -2,24 +2,36 @@
 
 import 'package:flutter/material.dart';
 
-class CustomBackButton extends StatelessWidget {
+class CustomIconButton extends StatelessWidget {
   final Function() onPressed;
-  const CustomBackButton({Key? key, required this.onPressed}) : super(key: key);
+  final double spreadRadius, width, height;
+  final Color backgroundColor, iconColor;
+  final IconData icon;
+  const CustomIconButton({
+    Key? key,
+    required this.onPressed,
+    required this.spreadRadius,
+    required this.backgroundColor,
+    required this.iconColor,
+    required this.icon,
+    required this.width,
+    required this.height,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: onPressed,
       child: Container(
         height: 45,
         width: 45,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          color: Color(0xFFFEF6EE),
+          color: backgroundColor,
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.3),
-              spreadRadius: 5,
+              spreadRadius: spreadRadius,
               blurRadius: 7,
               offset: Offset(0, 3),
             ),
@@ -27,8 +39,8 @@ class CustomBackButton extends StatelessWidget {
         ),
         child: Center(
           child: Icon(
-            Icons.arrow_back_ios_new,
-            color: Color(0xFFDA6317),
+            icon,
+            color: iconColor,
           ),
         ),
       ),

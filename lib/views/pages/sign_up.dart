@@ -45,7 +45,7 @@ class SignUp extends StatelessWidget {
               suffixIcon: true,
             ),
             SizedBox(height: 20),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 Navigator.pushNamed(context, SignIn.routeName);
               },

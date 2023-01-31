@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:food_ninja/views/pages/early_bio.dart';
+import 'package:food_ninja/views/pages/home_page.dart';
 import 'package:food_ninja/views/pages/onboarding.dart';
 import 'package:food_ninja/views/pages/payment.dart';
 import 'package:food_ninja/views/pages/sign_in.dart';
@@ -27,8 +28,9 @@ class MyApp extends StatelessWidget {
         EarlyBio.routeName: (context) => EarlyBio(),
         Payment.routeName: (context) => Payment(),
         UploadPhoto.routeName: (context) => UploadPhoto(),
+        HomePage.routeName: (context) => HomePage(),
       },
-      home: SplashScreen(),
+      home: HomePage(),
     );
   }
 }

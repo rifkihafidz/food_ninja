@@ -152,7 +152,7 @@ class SignIn extends StatelessWidget {
             ],
           ),
           SizedBox(height: 20),
-          GestureDetector(
+          InkWell(
             onTap: () {
               Navigator.pushNamed(context, SignUp.routeName);
             },
@@ -162,7 +162,7 @@ class SignIn extends StatelessWidget {
             ),
           ),
           SizedBox(height: 10),
-          GestureDetector(
+          InkWell(
             onTap: () {},
             child: Text(
               'Forgot your password?',

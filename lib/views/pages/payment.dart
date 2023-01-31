@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_ninja/utils/theme.dart';
 import 'package:food_ninja/views/pages/upload_photo.dart';
-import 'package:food_ninja/views/widgets/base_page.dart';
-import 'package:food_ninja/views/widgets/custom_back_button.dart';
+import 'package:food_ninja/views/widgets/base_page_constraint.dart';
+import 'package:food_ninja/views/widgets/custom_icon_button.dart';
 import 'package:food_ninja/views/widgets/custom_button.dart';
 import 'package:food_ninja/views/widgets/custom_payment_button.dart';
 
@@ -15,7 +15,7 @@ class Payment extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BasePage(
+    return BasePageConstraint(
       content: Container(
         margin: EdgeInsets.only(
           left: 20,
@@ -26,10 +26,14 @@ class Payment extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomBackButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
+            CustomIconButton(
+              onPressed: () {},
+              spreadRadius: 5,
+              backgroundColor: Color(0xFFFEF6EE),
+              iconColor: brownColor,
+              icon: Icons.arrow_back_ios_new,
+              width: 45,
+              height: 45,
             ),
             SizedBox(height: 20),
             Text(
@@ -58,7 +62,10 @@ class Payment extends StatelessWidget {
               child: CustomButton(
                 title: 'Next',
                 onPressed: () {
-                  Navigator.pushNamed(context, UploadPhoto.routeName);
+                  Navigator.pushNamed(
+                    context,
+                    UploadPhoto.routeName,
+                  );
                 },
                 width: MediaQuery.of(context).size.width / 2,
               ),

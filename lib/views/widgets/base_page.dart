@@ -1,8 +1,10 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 
 class BasePage extends StatelessWidget {
-  final Widget content;
-  const BasePage({Key? key, required this.content}) : super(key: key);
+  Widget content;
+  BasePage({Key? key, required this.content}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

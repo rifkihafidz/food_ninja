@@ -3,9 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:food_ninja/utils/theme.dart';
 import 'package:food_ninja/views/pages/payment.dart';
-import 'package:food_ninja/views/widgets/base_page.dart';
-import 'package:food_ninja/views/widgets/custom_back_button.dart';
+import 'package:food_ninja/views/widgets/base_page_constraint.dart';
 import 'package:food_ninja/views/widgets/custom_button.dart';
+import 'package:food_ninja/views/widgets/custom_icon_button.dart';
 import 'package:food_ninja/views/widgets/custom_input.dart';
 
 class EarlyBio extends StatelessWidget {
@@ -15,13 +15,24 @@ class EarlyBio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BasePage(
+    return BasePageConstraint(
       content: Container(
-        margin: EdgeInsets.symmetric(horizontal: 25, vertical: 40),
+        margin: EdgeInsets.symmetric(
+          horizontal: 25,
+          vertical: 40,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomBackButton(onPressed: () {}),
+            CustomIconButton(
+              onPressed: () {},
+              spreadRadius: 5,
+              backgroundColor: Color(0xFFFEF6EE),
+              iconColor: brownColor,
+              icon: Icons.arrow_back_ios_new,
+              width: 45,
+              height: 45,
+            ),
             SizedBox(height: 20),
             Text(
               'Fill in your bio to get\nstarted',
@@ -49,7 +60,10 @@ class EarlyBio extends StatelessWidget {
               child: CustomButton(
                 title: 'Next',
                 onPressed: () {
-                  Navigator.pushNamed(context, Payment.routeName);
+                  Navigator.pushNamed(
+                    context,
+                    Payment.routeName,
+                  );
                 },
                 width: MediaQuery.of(context).size.width / 2,
               ),
